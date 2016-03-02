@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title タスク情報
+    meta name="keywords" content="template language"
+    meta name="author" content="raa0121"
+  body
+    h1 タスク追加
+    form action="/add" method="POST"
+      - unless @task.empty?
+        input type="text" name="subject" value= @task[:subject]
+        input type="text" name="url" value= @task[:url]
+        input type="text" name="memo" value= @task[:memo]
+      - else
+        input type="text" name="subject"
+        input type="text" name="url"
+        input type="text" name="memo"
+      - end
+      input type="submit" value="追加"
+    div id="footer"
+      | Copyright &copy; 2016 raa0121
+
